@@ -66,17 +66,46 @@ class Client
 public:
     Client();
     Client(string name, string surname, int age, string email, string nationality, int money);
-    ~Client();
-    void setName(string name);
-    void setSurname(string surname);
-    void setAge(int age);
-    void setEmail(string email);
-    void setNationality(string setNationality);
-    string getName();
-    string getSurname();
-    int getAge();
-    string getEmail();
-    string getPassword();
+    void setName(string name)
+    {
+        this->name = name;
+    }
+    void setSurname(string surname)
+    {
+        this->surname = surname;
+    }
+    void setAge(int age)
+    {
+        this->age = age;
+    }
+    void setEmail(string email)
+    {
+        this->email = email;
+    }
+    void setNationality(string nationality)
+    {
+        this->nationality = nationality;
+    }
+    string getName()
+    {
+        return this->name;
+    }
+    string getSurname()
+    {
+        return this->surname;
+    }
+    int getAge()
+    {
+        return this->age;
+    }
+    string getEmail()
+    {
+        return this->email;
+    }
+    string getPassword()
+    {
+        return this->password;
+    }
     void printClient()
     {
         cout << "Name: " << name << endl;
