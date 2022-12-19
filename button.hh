@@ -6,7 +6,7 @@ using namespace std;
 
 class Button{
 public:
-    Button(){}
+    Button(){}//les deux constructeurs
     Button(string t, sf::Vector2f size, int charSize, sf::Color bgColor, sf::Color textColor){
         text.setString(t);
         text.setColor(textColor);
