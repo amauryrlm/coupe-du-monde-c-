@@ -2,6 +2,7 @@
 //pour compiler g++ -c main.cc puis g++ main.o -o sfml-app -lsfml-graphics -lsfml-window -lsfml-system puis ./sfml-app
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "buttontri.hh"
 #include "button.hh"
 using namespace std;
 
@@ -37,6 +38,18 @@ int main(){
     Button btn8("Boutton 8",{50,200},20,sf::Color::Red, sf::Color::Black);
     btn8.setPosition({300,200});
     btn8.setFont(arial);
+    Buttontri btn9("Boutton 9",{100,100},{0,100},{100,0},20,sf::Color::Magenta, sf::Color::Black);
+    btn9.setPosition({300,100});
+    btn9.setFont(arial);
+    Buttontri btn10("Boutton 10",{0,0},{0,100},{100,0},20,sf::Color::Magenta, sf::Color::Black);
+    btn10.setPosition({600,400});
+    btn10.setFont(arial);
+    Buttontri btn11("Boutton 11",{0,0},{100,0},{100,100},20,sf::Color::Magenta, sf::Color::Black);
+    btn11.setPosition({300,400});
+    btn11.setFont(arial);
+    Buttontri btn12("Boutton 12",{0,0},{0,100},{100,100},20,sf::Color::Magenta, sf::Color::Black);
+    btn12.setPosition({600,100});
+    btn12.setFont(arial);
     while (window.isOpen()){
         sf::Event Event;
         while(window.pollEvent(Event)){
@@ -92,6 +105,30 @@ int main(){
                     else {
                         btn8.setBackColor(sf::Color::Red);
                     }
+                    if (btn9.isMouseOver(window)){
+                        btn9.setBackColor(sf::Color::White);
+                    }
+                    else {
+                        btn9.setBackColor(sf::Color::Magenta);
+                    }
+                    if (btn10.isMouseOver(window)){
+                        btn10.setBackColor(sf::Color::White);
+                    }
+                    else {
+                        btn10.setBackColor(sf::Color::Magenta);
+                    }
+                    if (btn11.isMouseOver(window)){
+                        btn11.setBackColor(sf::Color::White);
+                    }
+                    else {
+                        btn11.setBackColor(sf::Color::Magenta);
+                    }
+                    if (btn12.isMouseOver(window)){
+                        btn12.setBackColor(sf::Color::White);
+                    }
+                    else {
+                        btn12.setBackColor(sf::Color::Magenta);
+                    }
                 case sf::Event::MouseButtonPressed: //souris appuyer
                     if(btn1.isMouseOver(window)){
                         cout<<"You clicked 1\n";
@@ -117,6 +154,18 @@ int main(){
                     if(btn8.isMouseOver(window)){
                         cout<<"You clicked 8\n";
                     }
+                    if(btn9.isMouseOver(window)){
+                        cout<<"You clicked 9\n";
+                    }
+                    if(btn10.isMouseOver(window)){
+                        cout<<"You clicked 10\n";
+                    }
+                    if(btn11.isMouseOver(window)){
+                        cout<<"You clicked 11\n";
+                    }
+                    if(btn12.isMouseOver(window)){
+                        cout<<"You clicked 12\n";
+                    }
             }
         }
         window.clear();
@@ -128,6 +177,10 @@ int main(){
         btn6.drawTo(window);
         btn7.drawTo(window);
         btn8.drawTo(window);
+        btn9.drawTo(window);
+        btn10.drawTo(window);
+        btn11.drawTo(window);
+        btn12.drawTo(window);
 
 
         window.display();
