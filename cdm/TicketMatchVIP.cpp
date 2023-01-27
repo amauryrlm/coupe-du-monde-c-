@@ -2,7 +2,7 @@
 
 
 int main(){
-    TicketMatchVIP t(10,"s","",0);
+    TicketMatchVIP t("s","",0);
     std::cout << t;
     return 0;
 }
