@@ -295,6 +295,7 @@ int main(){
                         cout<<"You clicked 12\n";
                     }
                     if(btn13.isMouseOver(window)){
+                        if(vip==1){
                         window.close();
                         sf::RenderWindow window;
     sf::Vector2i centerWindow((sf::VideoMode::getDesktopMode().width / 2)-445,(sf::VideoMode::getDesktopMode().height / 2)-480);//creer une echelle et une fenetre
@@ -661,6 +662,313 @@ int main(){
         btn5.drawTo(window);
         window.display();
     }
+                    }
+                    else{ sf::RenderWindow window;
+    sf::Vector2i centerWindow((sf::VideoMode::getDesktopMode().width / 2)-445,(sf::VideoMode::getDesktopMode().height / 2)-480);//creer une echelle et une fenetre
+    window.create(sf::VideoMode(900,900),"SFML Project",sf::Style::Titlebar | sf::Style::Close);
+    
+    window.setPosition(centerWindow);
+    window.setKeyRepeatEnabled(true);
+    sf::Font arial;
+    arial.loadFromFile("arial.ttf");
+    sf::Color newColor(250,0,0,100);
+    
+    Text text6("Voulez vous inclure votre vol",arial,20,sf::Color::Black);
+    text6.setPosition({100,325});
+
+  
+    Button btn5("",{50, 50},20,newColor, sf::Color::Black);//nom du bouton taille couleur du bouton couleur de la police
+    btn5.setPosition({100,375});
+    btn5.setFont(arial);
+    while (window.isOpen()){
+        sf::Event Event;
+        
+        while(window.pollEvent(Event)){
+            switch(Event.type){
+                case sf::Event::Closed:
+                    window.close();
+                case sf::Event::MouseButtonPressed: 
+                   
+                    if(btn5.isMouseOver(window)){
+                        sf::Color newColor2(165,255,127,255);
+                        sf::RenderWindow window;
+                        sf::Vector2i centerWindow((sf::VideoMode::getDesktopMode().width / 2)-445,(sf::VideoMode::getDesktopMode().height / 2)-480);//creer une echelle et une fenetre
+                        window.create(sf::VideoMode(900,900),"SFML Project",sf::Style::Titlebar | sf::Style::Close);
+                        window.setPosition(centerWindow);
+                        window.setKeyRepeatEnabled(true);
+    
+                        sf::Texture t;  
+                        t.loadFromFile("avionc-(3).png");
+                        sf::Sprite s(t);    
+                        s.setPosition(0,0);     
+                        sf::Font arial;
+    arial.loadFromFile("arial.ttf");
+    Button btn1("",{20, 20},20,sf::Color::Green, sf::Color::Black);//nom du bouton taille couleur du bouton couleur de la police
+    btn1.setPosition({410,325});
+    btn1.setFont(arial);
+    Button btn2("",{20,20},20,sf::Color::Green, sf::Color::Black);
+    btn2.setPosition({450,325});
+    btn2.setFont(arial);
+    Button btn3("",{20,20},20,sf::Color::Green, sf::Color::Black);
+    btn3.setPosition({410,375});
+    btn3.setFont(arial);
+    Button btn4("",{20,20},20,sf::Color::Green, sf::Color::Black);
+    btn4.setPosition({450,375});
+    btn4.setFont(arial);
+    Button btn5("",{20, 20},20,sf::Color::Red, sf::Color::Black);
+    btn5.setPosition({410,425});
+    btn5.setFont(arial);
+    Button btn6("",{20,20},20,sf::Color::Red, sf::Color::Black);
+    btn6.setPosition({450,425});
+    btn6.setFont(arial);
+    Button btn7("",{20,20},20,sf::Color::Red, sf::Color::Black);
+    btn7.setPosition({410,475});
+    btn7.setFont(arial);
+    Button btn8("",{20,20},20,sf::Color::Red, sf::Color::Black);
+    btn8.setPosition({450,475});
+    btn8.setFont(arial);
+    Button btn9("",{20,20},20,sf::Color::Red, sf::Color::Black);
+    btn9.setPosition({410,525});
+    btn9.setFont(arial);
+    Button btn10("",{20,20},20,sf::Color::Red, sf::Color::Black);
+    btn10.setPosition({450,525});
+    btn10.setFont(arial);
+    Button btn11("",{20,20},20,sf::Color::Red, sf::Color::Black);
+    btn11.setPosition({410,575});
+    btn11.setFont(arial);
+    Button btn12("",{20,20},20,sf::Color::Red, sf::Color::Black);
+    btn12.setPosition({450,575});
+    btn12.setFont(arial);
+    Button btn13("",{20,20},20,sf::Color::Red, sf::Color::Black);
+    btn13.setPosition({410,625});
+    btn13.setFont(arial);
+    Button btn14("",{20,20},20,sf::Color::Red, sf::Color::Black);
+    btn14.setPosition({450,625});
+    btn14.setFont(arial);
+    Button btn15("",{20,20},20,sf::Color::Red, sf::Color::Black);
+    btn15.setPosition({410,665});
+    btn15.setFont(arial);
+    Button btn16("",{20,20},20,sf::Color::Red, sf::Color::Black);
+    btn16.setPosition({450,665});
+    btn16.setFont(arial);
+    while (window.isOpen()){
+        sf::Event Event;
+        while(window.pollEvent(Event)){
+            switch(Event.type){
+                case sf::Event::Closed:
+                    window.close();
+                
+                case sf::Event::MouseButtonPressed: //souris appuyer
+                    if(btn1.isMouseOver(window)){
+                       
+                        cout<<"You clicked 1\n";
+                        window.close();
+                    }
+                    if(btn2.isMouseOver(window)){
+                        window.close();
+                        cout<<"You clicked 2\n";
+                    }
+                    if(btn3.isMouseOver(window)){
+                        window.close();
+                        cout<<"You clicked 3\n";
+                    }
+                    if(btn4.isMouseOver(window)){
+                        window.close();
+                        cout<<"You clicked 4\n";
+                    }
+                    if(btn5.isMouseOver(window)){
+                        window.close();
+                        cout<<"You clicked 5\n";
+                    }
+                    if(btn6.isMouseOver(window)){
+                        window.close();
+                        cout<<"You clicked 6\n";
+                    }
+                    if(btn7.isMouseOver(window)){
+                        window.close();
+                        cout<<"You clicked 7\n";
+                    }
+                    if(btn8.isMouseOver(window)){
+                        window.close();
+                        cout<<"You clicked 8\n";
+                    }
+                    if(btn9.isMouseOver(window)){
+                        window.close();
+                        cout<<"You clicked 9\n";
+                    }
+                    if(btn10.isMouseOver(window)){
+                       window.close();
+                        cout<<"You clicked 10\n";
+                    }
+                    if(btn11.isMouseOver(window)){
+                        window.close();
+                        cout<<"You clicked 11\n";
+                    }
+                    if(btn12.isMouseOver(window)){
+                        window.close();
+                        cout<<"You clicked 12\n";
+                    }
+                    if(btn13.isMouseOver(window)){
+                        window.close();
+                        cout<<"You clicked 12\n";
+                    }
+                    if(btn14.isMouseOver(window)){
+                        window.close();
+                        cout<<"You clicked 12\n";
+                    }
+                    if(btn15.isMouseOver(window)){
+                        window.close();
+                        cout<<"You clicked 12\n";
+                    }
+                    if(btn16.isMouseOver(window)){
+                        window.close();
+                        cout<<"You clicked 12\n";
+                    }
+                case sf::Event::MouseMoved: //la ou la souris est sans etre appuyer
+                    if (btn1.isMouseOver(window)){
+                        btn1.setBackColor(sf::Color::White);
+                    }
+                    else {
+                        btn1.setBackColor(sf::Color::Green);
+                    }
+                    if (btn2.isMouseOver(window)){
+                        btn2.setBackColor(sf::Color::White);
+                    }
+                    else {
+                        btn2.setBackColor(sf::Color::Green);
+                    }
+                    if (btn3.isMouseOver(window)){
+                        btn3.setBackColor(sf::Color::White);
+                    }
+                    else {
+                        btn3.setBackColor(sf::Color::Green);
+                    }
+                    if (btn4.isMouseOver(window)){
+                        btn4.setBackColor(sf::Color::White);
+                    }
+                    else {
+                        btn4.setBackColor(sf::Color::Green);
+                    }
+                    if (btn5.isMouseOver(window)){
+                        btn5.setBackColor(sf::Color::White);
+                    }
+                    else {
+                        btn5.setBackColor(sf::Color::Red);
+                    }
+                    if (btn6.isMouseOver(window)){
+                        btn6.setBackColor(sf::Color::White);
+                    }
+                    else {
+                        btn6.setBackColor(sf::Color::Red);
+                    }
+                    if (btn7.isMouseOver(window)){
+                        btn7.setBackColor(sf::Color::White);
+                    }
+                    else {
+                        btn7.setBackColor(sf::Color::Red);
+                    }
+                    if (btn8.isMouseOver(window)){
+                        btn8.setBackColor(sf::Color::White);
+                    }
+                    else {
+                        btn8.setBackColor(sf::Color::Red);
+                    }
+                    if (btn9.isMouseOver(window)){
+                        btn9.setBackColor(sf::Color::White);
+                    }
+                    else {
+                        btn9.setBackColor(sf::Color::Red);
+                    }
+                    if (btn10.isMouseOver(window)){
+                        btn10.setBackColor(sf::Color::White);
+                    }
+                    else {
+                        btn10.setBackColor(sf::Color::Red);
+                    }
+                    if (btn11.isMouseOver(window)){
+                        btn11.setBackColor(sf::Color::White);
+                    }
+                    else {
+                        btn11.setBackColor(sf::Color::Red);
+                    }
+                    if (btn12.isMouseOver(window)){
+                        btn12.setBackColor(sf::Color::White);
+                    }
+                    else {
+                        btn12.setBackColor(sf::Color::Red);
+                    }
+                    if (btn13.isMouseOver(window)){
+                        btn13.setBackColor(sf::Color::White);
+                    }
+                    else {
+                        btn13.setBackColor(sf::Color::Red);
+                    }
+                    if (btn14.isMouseOver(window)){
+                        btn14.setBackColor(sf::Color::White);
+                    }
+                    else {
+                        btn14.setBackColor(sf::Color::Red);
+                    }
+                    if (btn15.isMouseOver(window)){
+                        btn15.setBackColor(sf::Color::White);
+                    }
+                    else {
+                        btn15.setBackColor(sf::Color::Red);
+                    }
+                    if (btn16.isMouseOver(window)){
+                        btn16.setBackColor(sf::Color::White);
+                    }
+                    else {
+                        btn16.setBackColor(sf::Color::Red);
+                    }
+            }
+        }
+        window.clear(newColor2);
+        window.draw(s);
+        btn1.drawTo(window); //dessiner les boutons
+        btn2.drawTo(window);
+        btn3.drawTo(window);
+        btn4.drawTo(window);
+        btn5.drawTo(window);
+        btn6.drawTo(window);
+        btn7.drawTo(window);
+        btn8.drawTo(window);
+        btn9.drawTo(window);
+        btn10.drawTo(window);
+        btn11.drawTo(window);
+        btn12.drawTo(window);
+        btn13.drawTo(window);
+        btn14.drawTo(window);
+        btn15.drawTo(window);
+        btn16.drawTo(window);
+
+        window.display();
+    }
+                    }
+                // case sf::Event::MouseMoved:
+                //     if (btn1.isMouseOver(window)){
+                //         btn1.setBackColor(sf::Color::Green);
+                //     }
+                //     else {
+                //         btn1.setBackColor(newColor);
+                //     } 
+                //     if (btn4.isMouseOver(window)){
+                //         btn4.setBackColor(sf::Color::Green);
+                //     }
+                //     else {
+                //         btn4.setBackColor(newColor);
+                //     }    
+                    
+            }
+        }
+        window.clear(sf::Color::White);
+    //    window.draw(triangle);
+        
+        text6.drawTo(window);
+        
+        btn5.drawTo(window);
+        window.display();
+    }}
                     }
                 case sf::Event::MouseMoved: //la ou la souris est sans etre appuyer
                     if (btn1.isMouseOver(window)){
