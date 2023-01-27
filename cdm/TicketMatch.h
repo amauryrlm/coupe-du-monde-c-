@@ -31,7 +31,7 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const TicketMatch& t) {
         os << "Match number: " << t.matchNumber << std::endl;
         os << "Round: " << t.Round << std::endl;
-        os << "Date: " << t.Date.tm_mday << "/" << t.Date.tm_mon << "/" << t.Date.tm_year << std::endl;
+        os << "Date: " << t.date.tm_mday << "/" << t.date.tm_mon << "/" << t.date.tm_year << std::endl;
         os << "Location: " << t.Location << std::endl;
         os << "Home Team: " << t.HomeTeam << std::endl;
         os << "Away Team: " << t.AwayTeam << std::endl;
@@ -53,16 +53,16 @@ private:
 };
 
 // transform string to tm
-void TicketMatch::stringToTM(std::string& date) {
+void TicketMatch::stringToTM(std::string& d) {
     std::tm t = {};
-    std::istringstream ss(date);
+    std::istringstream ss(d);
     ss >> std::get_time(&t, "%d/%m/%Y");
     if (ss.fail()) {
         std::cout << "Error parsing date" << std::endl;
     }
-    Date.tm_mday = t.tm_mday;
-    Date.tm_mon = t.tm_mon + 1; 
-    Date.tm_year = t.tm_year + 1900; 
+    date.tm_mday = t.tm_mday;
+    date.tm_mon = t.tm_mon + 1; 
+    date.tm_year = t.tm_year + 1900; 
 }
 //set price depending on round
 void TicketMatch::setPrice(){

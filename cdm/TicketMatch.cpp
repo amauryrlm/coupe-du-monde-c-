@@ -4,7 +4,7 @@
 
 
 int main(){
-    TicketMatch t(5);
+    TicketMatch t;
     std::cout << t;
     return 0;
 }

@@ -16,18 +16,23 @@ public:
     virtual ~Ticket(){}
     double getPrice() const {return price;}
     unsigned int getId() const {return id;}
+    void setPrice(double p) {price = p;}
 
 
 
 protected:
 
     double price;
+    tm date;
+
 
 private:
 
     unsigned int id;
     static unsigned int cpt;
-    struct tm date;
+    
+    int row;
+    int seat;
 
 
 };
