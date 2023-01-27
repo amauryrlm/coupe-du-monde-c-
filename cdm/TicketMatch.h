@@ -85,6 +85,8 @@ void TicketMatch::setPrice(){
 
 //constructeur a partir du numero de match et du csv contenant les infos
 
+/// @brief 
+/// @param m 
 TicketMatch::TicketMatch(int m) {
     std::string fileName = "fifa-world-cup-2022-UTC.csv"; 
     std::ifstream file(fileName);
