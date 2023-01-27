@@ -6,6 +6,10 @@
 #include "buttontri.hh"
 #include "Text.hh"
 #include "Account.h"
+#include "cdm/TicketMatch.h"
+#include "cdm/TicketMatchVIP.h"
+#include "cdm/TicketPlane.h"
+
 // #include "Account.h"
 
 using namespace std;
@@ -295,12 +299,13 @@ int main(){
                         cout<<"You clicked 12\n";
                     }
                     if(btn13.isMouseOver(window)){
-                        if(vip==1){
                         window.close();
+                        if(vip==1){
+                        
                         sf::RenderWindow window;
     sf::Vector2i centerWindow((sf::VideoMode::getDesktopMode().width / 2)-445,(sf::VideoMode::getDesktopMode().height / 2)-480);//creer une echelle et une fenetre
     window.create(sf::VideoMode(900,900),"SFML Project",sf::Style::Titlebar | sf::Style::Close);
-    
+    bool Alc=false;
     window.setPosition(centerWindow);
     window.setKeyRepeatEnabled(true);
     sf::Font arial;
@@ -366,13 +371,16 @@ int main(){
                     if(btn1.isMouseOver(window)){
                         btn1.setBackColor(sf::Color::Green);
                         btn4.setBackColor(newColor);
+                        Alc=true;
                     }
                     if(btn4.isMouseOver(window)){
                         btn1.setBackColor(newColor);
                         btn4.setBackColor(sf::Color::Green);
+                        Alc=false;
                     }
                     if(btn5.isMouseOver(window)){
                         sf::Color newColor2(165,255,127,255);
+                        int buisness=0;
                         sf::RenderWindow window;
                         sf::Vector2i centerWindow((sf::VideoMode::getDesktopMode().width / 2)-445,(sf::VideoMode::getDesktopMode().height / 2)-480);//creer une echelle et une fenetre
                         window.create(sf::VideoMode(900,900),"SFML Project",sf::Style::Titlebar | sf::Style::Close);
@@ -385,6 +393,16 @@ int main(){
                         s.setPosition(0,0);     
                         sf::Font arial;
     arial.loadFromFile("arial.ttf");
+    sf::Color newColor(250,0,0,100);
+    Text text1("Lieu de depart:",arial,20,sf::Color::Black);
+    text1.setPosition({650,225});
+    Textbox textbox1(15,sf::Color::Black,false);
+    textbox1.setFont(arial);
+    textbox1.setPosition({650,250});
+    Button btn17("",{200, 20},20,newColor, sf::Color::Black);//nom du bouton taille couleur du bouton couleur de la police
+    btn17.setPosition({650,250});
+    btn17.setFont(arial);
+
     Button btn1("",{20, 20},20,sf::Color::Green, sf::Color::Black);//nom du bouton taille couleur du bouton couleur de la police
     btn1.setPosition({410,325});
     btn1.setFont(arial);
@@ -433,76 +451,105 @@ int main(){
     Button btn16("",{20,20},20,sf::Color::Red, sf::Color::Black);
     btn16.setPosition({450,665});
     btn16.setFont(arial);
+
     while (window.isOpen()){
         sf::Event Event;
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return)){
+            textbox1.setSelected(false);
+            
+        }
         while(window.pollEvent(Event)){
             switch(Event.type){
                 case sf::Event::Closed:
                     window.close();
                 
                 case sf::Event::MouseButtonPressed: //souris appuyer
+                    if(btn17.isMouseOver(window)){
+                        textbox1.setSelected(true);
+                        
+                    }
                     if(btn1.isMouseOver(window)){
                        
                         cout<<"You clicked 1\n";
+                        buisness=1;
+                        BusinessClass ticketavion(textbox1.getText());
                         window.close();
                     }
                     if(btn2.isMouseOver(window)){
+                        BusinessClass ticketavion(textbox1.getText());
                         window.close();
+                        buisness=1;
                         cout<<"You clicked 2\n";
                     }
                     if(btn3.isMouseOver(window)){
+                        BusinessClass ticketavion(textbox1.getText());
                         window.close();
+                        buisness=1;
                         cout<<"You clicked 3\n";
                     }
                     if(btn4.isMouseOver(window)){
+                        BusinessClass ticketavion(textbox1.getText());
                         window.close();
+                        buisness=1;
                         cout<<"You clicked 4\n";
                     }
                     if(btn5.isMouseOver(window)){
+                        EconomyClass ticketavion(textbox1.getText());
                         window.close();
                         cout<<"You clicked 5\n";
                     }
                     if(btn6.isMouseOver(window)){
+                        EconomyClass ticketavion(textbox1.getText());
                         window.close();
                         cout<<"You clicked 6\n";
                     }
                     if(btn7.isMouseOver(window)){
+                        EconomyClass ticketavion(textbox1.getText());
                         window.close();
                         cout<<"You clicked 7\n";
                     }
                     if(btn8.isMouseOver(window)){
+                        EconomyClass ticketavion(textbox1.getText());
                         window.close();
                         cout<<"You clicked 8\n";
                     }
                     if(btn9.isMouseOver(window)){
+                        EconomyClass ticketavion(textbox1.getText());
                         window.close();
                         cout<<"You clicked 9\n";
                     }
                     if(btn10.isMouseOver(window)){
+                       EconomyClass ticketavion(textbox1.getText());
                        window.close();
                         cout<<"You clicked 10\n";
                     }
                     if(btn11.isMouseOver(window)){
+                        EconomyClass ticketavion(textbox1.getText());
                         window.close();
                         cout<<"You clicked 11\n";
                     }
                     if(btn12.isMouseOver(window)){
+                        EconomyClass ticketavion(textbox1.getText());
                         window.close();
                         cout<<"You clicked 12\n";
                     }
                     if(btn13.isMouseOver(window)){
+                        EconomyClass ticketavion(textbox1.getText());
                         window.close();
                         cout<<"You clicked 12\n";
                     }
                     if(btn14.isMouseOver(window)){
+                        EconomyClass ticketavion(textbox1.getText());
                         window.close();
                         cout<<"You clicked 12\n";
                     }
                     if(btn15.isMouseOver(window)){
+                        EconomyClass ticketavion(textbox1.getText());
                         window.close();
                         cout<<"You clicked 12\n";
                     }
                     if(btn16.isMouseOver(window)){
+                        EconomyClass ticketavion(textbox1.getText());
                         window.close();
                         cout<<"You clicked 12\n";
                     }
@@ -603,6 +650,9 @@ int main(){
                     else {
                         btn16.setBackColor(sf::Color::Red);
                     }
+                case sf::Event::TextEntered:
+                    textbox1.typedOn(Event);
+                        
             }
         }
         window.clear(newColor2);
@@ -623,6 +673,9 @@ int main(){
         btn14.drawTo(window);
         btn15.drawTo(window);
         btn16.drawTo(window);
+        text1.drawTo(window);
+        textbox1.drawTo(window);
+        btn17.drawTo(window);
 
         window.display();
     }
@@ -661,9 +714,12 @@ int main(){
         btn4.drawTo(window);
         btn5.drawTo(window);
         window.display();
+        TicketMatchVIP matchvip(textbox1.getText(),textbox2.getText(),Alc);
     }
                     }
-                    else{ sf::RenderWindow window;
+                    else{
+                        TicketMatch ticketmatch(); 
+                        sf::RenderWindow window;
     sf::Vector2i centerWindow((sf::VideoMode::getDesktopMode().width / 2)-445,(sf::VideoMode::getDesktopMode().height / 2)-480);//creer une echelle et une fenetre
     window.create(sf::VideoMode(900,900),"SFML Project",sf::Style::Titlebar | sf::Style::Close);
     
@@ -692,6 +748,7 @@ int main(){
                     if(btn5.isMouseOver(window)){
                         sf::Color newColor2(165,255,127,255);
                         sf::RenderWindow window;
+                        int buisness=0;
                         sf::Vector2i centerWindow((sf::VideoMode::getDesktopMode().width / 2)-445,(sf::VideoMode::getDesktopMode().height / 2)-480);//creer une echelle et une fenetre
                         window.create(sf::VideoMode(900,900),"SFML Project",sf::Style::Titlebar | sf::Style::Close);
                         window.setPosition(centerWindow);
@@ -703,6 +760,15 @@ int main(){
                         s.setPosition(0,0);     
                         sf::Font arial;
     arial.loadFromFile("arial.ttf");
+    sf::Color newColor(250,0,0,100);
+    Text text1("Lieu de depart:",arial,20,sf::Color::Black);
+    text1.setPosition({650,225});
+    Textbox textbox1(15,sf::Color::Black,false);
+    textbox1.setFont(arial);
+    textbox1.setPosition({650,250});
+    Button btn17("",{200, 20},20,newColor, sf::Color::Black);//nom du bouton taille couleur du bouton couleur de la police
+    btn17.setPosition({650,250});
+    btn17.setFont(arial);
     Button btn1("",{20, 20},20,sf::Color::Green, sf::Color::Black);//nom du bouton taille couleur du bouton couleur de la police
     btn1.setPosition({410,325});
     btn1.setFont(arial);
@@ -753,74 +819,102 @@ int main(){
     btn16.setFont(arial);
     while (window.isOpen()){
         sf::Event Event;
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return)){
+            textbox1.setSelected(false);
+            
+        }
         while(window.pollEvent(Event)){
             switch(Event.type){
                 case sf::Event::Closed:
                     window.close();
                 
                 case sf::Event::MouseButtonPressed: //souris appuyer
+                    if(btn17.isMouseOver(window)){
+                        textbox1.setSelected(true);
+                        
+                    }
                     if(btn1.isMouseOver(window)){
                        
                         cout<<"You clicked 1\n";
+                        
+                        BusinessClass ticketavion(textbox1.getText());
                         window.close();
                     }
                     if(btn2.isMouseOver(window)){
                         window.close();
+                        BusinessClass ticketavion(textbox1.getText());
+
                         cout<<"You clicked 2\n";
                     }
                     if(btn3.isMouseOver(window)){
                         window.close();
+                       
+                        BusinessClass ticketavion(textbox1.getText());
                         cout<<"You clicked 3\n";
                     }
                     if(btn4.isMouseOver(window)){
                         window.close();
+                       
+                        BusinessClass ticketavion(textbox1.getText());
                         cout<<"You clicked 4\n";
                     }
                     if(btn5.isMouseOver(window)){
+                        EconomyClass ticketavion(textbox1.getText());
                         window.close();
                         cout<<"You clicked 5\n";
                     }
                     if(btn6.isMouseOver(window)){
+                        EconomyClass ticketavion(textbox1.getText());
                         window.close();
                         cout<<"You clicked 6\n";
                     }
                     if(btn7.isMouseOver(window)){
+                        EconomyClass ticketavion(textbox1.getText());
                         window.close();
                         cout<<"You clicked 7\n";
                     }
                     if(btn8.isMouseOver(window)){
+                        EconomyClass ticketavion(textbox1.getText());
                         window.close();
                         cout<<"You clicked 8\n";
                     }
                     if(btn9.isMouseOver(window)){
+                        EconomyClass ticketavion(textbox1.getText());
                         window.close();
                         cout<<"You clicked 9\n";
                     }
                     if(btn10.isMouseOver(window)){
+                       EconomyClass ticketavion(textbox1.getText());
                        window.close();
                         cout<<"You clicked 10\n";
                     }
                     if(btn11.isMouseOver(window)){
+                        EconomyClass ticketavion(textbox1.getText());
                         window.close();
                         cout<<"You clicked 11\n";
                     }
                     if(btn12.isMouseOver(window)){
+                        EconomyClass ticketavion(textbox1.getText());
                         window.close();
                         cout<<"You clicked 12\n";
                     }
                     if(btn13.isMouseOver(window)){
+                        EconomyClass ticketavion(textbox1.getText());
                         window.close();
                         cout<<"You clicked 12\n";
                     }
                     if(btn14.isMouseOver(window)){
+                        EconomyClass ticketavion(textbox1.getText());
                         window.close();
                         cout<<"You clicked 12\n";
                     }
                     if(btn15.isMouseOver(window)){
+                        EconomyClass ticketavion(textbox1.getText());
                         window.close();
                         cout<<"You clicked 12\n";
                     }
                     if(btn16.isMouseOver(window)){
+                        EconomyClass ticketavion(textbox1.getText());
                         window.close();
                         cout<<"You clicked 12\n";
                     }
@@ -921,6 +1015,8 @@ int main(){
                     else {
                         btn16.setBackColor(sf::Color::Red);
                     }
+                case sf::Event::TextEntered:
+                    textbox1.typedOn(Event);    
             }
         }
         window.clear(newColor2);
@@ -941,6 +1037,9 @@ int main(){
         btn14.drawTo(window);
         btn15.drawTo(window);
         btn16.drawTo(window);
+        text1.drawTo(window);
+        textbox1.drawTo(window);
+        btn17.drawTo(window);
 
         window.display();
     }
