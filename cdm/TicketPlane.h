@@ -1,25 +1,25 @@
-#ifdef TICKETPLANE_H
-#define TICKETPLANE_H
-#include "ticket.h"
-#include <sting>
 
-class PlaneTicket : public Ticket
+#include "ticket.h"
+#pragma once
+
+
+class TicketPlane : public Ticket
 {
 public:
-    PlaneTicket(std::string d, std::string a):destination(d),airline(a){}
+    TicketPlane(std::string departure) : departure(departure) {setprice();}
     std::string getDestination() const {return destination;}
     std::string getAirline() const {return airline;}
     void setprice(){price=1000;}
-    friend std::ostream& operator<<(std::ostream& os, const PlaneTicket& ticket);
+    friend std::ostream& operator<<(std::ostream& os, const TicketPlane& ticket);
 
 
 protected:
-    std::string destination;
-    std::string airline;
+    std::string destination ="Doha";
+    std::string airline = "Emirates";
     std::string departure;    
 };
 
-std::ostream& operator<<(std::ostream& os, const PlaneTicket& ticket)
+std::ostream& operator<<(std::ostream& os, const TicketPlane& ticket)
 {
     os << "Destination: " << ticket.destination << std::endl;
     os << "Airline: " << ticket.airline << std::endl;
@@ -29,30 +29,28 @@ std::ostream& operator<<(std::ostream& os, const PlaneTicket& ticket)
 }
 
 
-class EconomyClass : public PlaneTicket
+class EconomyClass : public TicketPlane
 {
 public:
-    EconomyClass() : mealOption("Chicken") {}
+    EconomyClass(std::string dep) :TicketPlane(dep) {setprice();}
     void setMealOption(std::string meal) { mealOption = meal; }
     void setprice(){price*=0.5;}
 private:
     
-    std::string mealOption;
+    std::string mealOption= "Chicken";
 };
 
-class BusinessClass : public PlaneTicket
+class BusinessClass : public TicketPlane
 {
 public:
-    BusinessClass() : loungeAccess(true), priorityBoarding(true) {}
+    BusinessClass(std::string dep) :TicketPlane(dep) {setprice();}
     bool hasLoungeAccess() const { return loungeAccess; }
     bool hasPriorityBoarding() const { return priorityBoarding; }
     void setprice(){price*=1.5;}
 private:
-    bool loungeAccess;
-    bool priorityBoarding;
+    bool loungeAccess=true;
+    bool priorityBoarding=true;
 };
 
 
 
-
-#endif // TICKETPLANE_H
