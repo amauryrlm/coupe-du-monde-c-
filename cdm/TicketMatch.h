@@ -7,6 +7,7 @@
 #include <fstream>
 #include <ctime>
 #include <sstream>
+#include <cstdlib>
 
 
 
@@ -15,7 +16,7 @@ class TicketMatch : public Ticket
 public:
 
     void setPrice();
-    TicketMatch(int matchNumber); //constructeur
+    TicketMatch(); //constructeur
     // void stringToTM(std::string& date);
     void getMatchNumber() const {std::cout << matchNumber << std::endl;}
     void getRound() const {std::cout << Round << std::endl;}
@@ -43,7 +44,6 @@ public:
 private:
     int matchNumber;
     std::string Round;
-    tm Date;
     std::string Location;
     std::string HomeTeam;
     std::string AwayTeam;
@@ -83,11 +83,18 @@ void TicketMatch::setPrice(){
     price = tempPrice;
 }
 
+
+
+int generateRandomNumber() {
+    srand(time(0));
+    return rand() % 64 + 1;
+}
+
 //constructeur a partir du numero de match et du csv contenant les infos
 
-/// @brief 
-/// @param m 
-TicketMatch::TicketMatch(int m) {
+
+TicketMatch::TicketMatch() {
+    int m = generateRandomNumber();
     std::string fileName = "fifa-world-cup-2022-UTC.csv"; 
     std::ifstream file(fileName);
     std::string line;
