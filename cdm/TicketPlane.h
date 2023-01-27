@@ -32,8 +32,8 @@ std::ostream& operator<<(std::ostream& os, const PlaneTicket& ticket)
 class EconomyClass : public PlaneTicket
 {
 public:
-    EconomyClass(std::string seatType, std::string mealOption) : seatType(seatType), mealOption(mealOption) {}
-    std::string getSeatType() const { return seatType; }
+    EconomyClass() : mealOption("Chicken") {}
+    void setMealOption(std::string meal) { mealOption = meal; }
     void setprice(){price*=0.5;}
 private:
     
@@ -43,7 +43,7 @@ private:
 class BusinessClass : public PlaneTicket
 {
 public:
-    BusinessClass(bool loungeAccess, bool priorityBoarding) : loungeAccess(true), priorityBoarding(true) {}
+    BusinessClass() : loungeAccess(true), priorityBoarding(true) {}
     bool hasLoungeAccess() const { return loungeAccess; }
     bool hasPriorityBoarding() const { return priorityBoarding; }
     void setprice(){price*=1.5;}
@@ -52,17 +52,6 @@ private:
     bool priorityBoarding;
 };
 
-class FirstClass : public PlaneTicket
-{
-public:
-    FirstClass() : limousineService(true), inflightEntertainment("premium") {}
-    bool hasLimousineService() const { return limousineService; }
-    std::string getInflightEntertainment() const { return inflightEntertainment; }
-    void setprice(){price*=2;}
-private:
-    bool limousineService;
-    std::string inflightEntertainment;
-};
 
 
 
